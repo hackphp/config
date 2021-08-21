@@ -1,0 +1,32 @@
+{
+    "name": "hackphp/config",
+    "description": "HackPHP Config Access.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Hackphp\\Config\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Hackphp\\Tests\\Config\\": "tests/"
+        },
+        "files": [
+            "tests/helpers.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Mohamed Samir",
+            "email": "gm.mohamedsamir@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require-dev": {
+        "phpunit/phpunit": "9.5.x-dev"
+    },
+    "scripts": {
+        "test": "./vendor/bin/phpunit --do-not-cache-result --testdox"
+    }
+}

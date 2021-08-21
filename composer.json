@@ -6,15 +6,15 @@
     "autoload": {
         "psr-4": {
             "Hackphp\\Config\\": "src/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Hackphp\\Tests\\Config\\": "tests/"
         },
         "files": [
             "tests/helpers.php"
         ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Hackphp\\Tests\\Config\\": "tests/"
+        }
     },
     "authors": [
         {

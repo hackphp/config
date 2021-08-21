@@ -2,16 +2,23 @@
 
 namespace Hackphp\Config\Tests\Parsers;
 
+use PHPUnit\Framework\TestCase;
 use Hackphp\Config\Contracts\Parser;
 use Hackphp\Config\Parsers\ArrayParser;
-use PHPUnit\Framework\TestCase;
 
 class ArrayParserTest extends TestCase
 {
+    protected string $configPath;
+
+    protected function setUp(): void
+    {
+        $this->configPath = __DIR__ . "/../config";
+    }
+
     /** @test */
     public function it_must_be_instance_of_parser_interface()
     {
-        $parser = new ArrayParser(configPath());
+        $parser = new ArrayParser($this->configPath);
 
         $this->assertInstanceOf(Parser::class, $parser);
     }
@@ -19,7 +26,7 @@ class ArrayParserTest extends TestCase
     /** @test */
     public function it_parses_files_from_the_given_directory()
     {
-        $parser = new ArrayParser(configPath("server"));
+        $parser = new ArrayParser($this->configPath . "/server");
         $parsed = $parser->parse();
 
         $expected = [
@@ -35,7 +42,7 @@ class ArrayParserTest extends TestCase
     /** @test */
     public function it_can_parse_nested_files()
     {
-        $parser = new ArrayParser(configPath());
+        $parser = new ArrayParser($this->configPath);
         $parsed = $parser->parse();
 
         $expected = [

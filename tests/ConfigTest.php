@@ -3,11 +3,18 @@
 namespace Hackphp\Config\Tests;
 
 use Hackphp\Config\Config;
-use Hackphp\Config\Parsers\ArrayParser;
 use PHPUnit\Framework\TestCase;
+use Hackphp\Config\Parsers\ArrayParser;
 
 class ConfigTest extends TestCase
 {
+    protected string $configPath;
+
+    protected function setUp(): void
+    {
+        $this->configPath = __DIR__ . "/config";
+    }
+
     /** @test */
     public function it_can_create_instance_with_default_configs()
     {
@@ -24,7 +31,7 @@ class ConfigTest extends TestCase
     /** @test */
     public function it_loads_and_parse_all_directory_files_successfully()
     {
-        $parser = new ArrayParser(configPath());
+        $parser = new ArrayParser($this->configPath);
 
         $config = new Config();
         $config->addParser($parser);
@@ -37,7 +44,7 @@ class ConfigTest extends TestCase
     /** @test */
     public function it_loads_the_default_value_if_the_key_not_found()
     {
-        $parser = new ArrayParser(configPath());
+        $parser = new ArrayParser($this->configPath);
 
         $config = new Config();
         $config->addParser($parser);

@@ -8,7 +8,7 @@
             "Hackphp\\Config\\": "src/"
         },
         "files": [
-            "tests/helpers.php"
+            "src/helpers.php"
         ]
     },
     "autoload-dev": {

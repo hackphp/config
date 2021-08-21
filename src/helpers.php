@@ -8,12 +8,12 @@ if (!function_exists("configPath")) {
      */
     function configPath($path = null)
     {
-        $dir = __DIR__ . "/config";
+        $dir = __DIR__ . "/../config";
 
         if ($path) {
             $dir .= "/" . $path;
         }
-        
+
         return $dir;
     }
 }

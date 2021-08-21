@@ -4,7 +4,7 @@ HackPHP Config Access.
 ## Usage
 
 ```bash
-composer require hackphp/config "1.0"
+composer require hackphp/config
 ```
 
 ```php
